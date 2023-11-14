@@ -112,13 +112,7 @@ function makeChoice(choice)
 	{
         currentStage = storyStages[nextStageKey];
         updateStory();
-        if (nextStageKey === "happyEnding" || nextStageKey === "sadEnding") 
-		{
-            endGame(nextStageKey === "happyEnding" ? "Happy Ending" : "Sad Ending");
-        }
-    } else {
-        console.error("Invalid choice bridgeConsequence:", choice);
-    }
+	}
 }
 
 updateStory();
