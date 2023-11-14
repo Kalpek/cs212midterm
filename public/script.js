@@ -1,4 +1,3 @@
-// Define stages of the story
 const storyStages = {
     start: {
         text: "Welcome to the Bridge. At each stop, you can either go left, or go right. One path will break below you.",
@@ -67,13 +66,13 @@ const storyStages = {
     }
 };
 
-// Initial stage of the story
 let currentStage = storyStages.start;
 
-// Function to update the story based on user choices
-function makeChoice(choice) {
+function makeChoice(choice) 
+{
     const nextStageKey = currentStage.consequence[choice];
-    if (nextStageKey) {
+    if (nextStageKey) 
+	{
         currentStage = storyStages[nextStageKey];
         updateStory();
     } else {
@@ -81,34 +80,32 @@ function makeChoice(choice) {
     }
 }
 
-// Function to update the HTML with the current story stage
-function updateStory() {
+function updateStory() 
+{
     const storyElement = document.getElementById("story");
     const choicesElement = document.getElementById("choices");
 
-    // Update story text
     storyElement.innerHTML = `<p>${currentStage.text}</p>`;
 
-    // Update choices
     choicesElement.innerHTML = "";
     currentStage.choices.forEach(choice => {
         const button = document.createElement("button");
         button.textContent = choice;
         button.addEventListener("click", () => makeChoice(choice));
         choicesElement.appendChild(button);
-    });
-
-
+    }
+);
 }
 
-// Function to update the story based on user choices
-function makeChoice(choice) {
+function makeChoice(choice) 
+{
     const nextStageKey = currentStage.consequence[choice];
-    if (nextStageKey) {
+    if (nextStageKey) 
+	{
         currentStage = storyStages[nextStageKey];
         updateStory();
-        // Check for a condition to end the game
-        if (nextStageKey === "happyEnding" || nextStageKey === "sadEnding") {
+        if (nextStageKey === "happyEnding" || nextStageKey === "sadEnding") 
+		{
             endGame(nextStageKey === "happyEnding" ? "Happy Ending" : "Sad Ending");
         }
     } else {
@@ -116,8 +113,4 @@ function makeChoice(choice) {
     }
 }
 
-// ... (your existing code)
-
-
-// Initial update
 updateStory();
