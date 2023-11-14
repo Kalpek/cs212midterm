@@ -5,7 +5,7 @@ const storyStages = {
         bridgeChoice: ["Go left", "Go right"],
         bridgeConsequence: {
             "Go left": "Correct1",
-            "Go right": "sadEnding"
+            "Go right": "LOSERRRR"
         },
     },
 
@@ -14,7 +14,7 @@ const storyStages = {
         text: "You Finish crossing the bridge, and are met with another. There is a steep one to the left, and a regular one to the right. Which seems safer?",
         bridgeChoice: ["Go left", "Go right"],
         bridgeConsequence: {
-            "Go left": "sadEnding",
+            "Go left": "LOSERRRR",
             "Go right": "Correct2"
         },
     },
@@ -24,7 +24,7 @@ const storyStages = {
         text: "Good intuition. Now its pitch black, however you can still feel the side handles to multiple bridges. It's completely random, left or right?",
         bridgeChoice: ["Go left", "Go right"],
         bridgeConsequence: {
-            "Go left": "sadEnding",
+            "Go left": "LOSERRRR",
             "Go right": "Correct3"
         },
     },
@@ -35,7 +35,7 @@ const storyStages = {
         bridgeChoice: ["Go left", "Go right"],
         bridgeConsequence: {
             "Go left": "Correct4",
-            "Go right": "sadEnding"
+            "Go right": "LOSERRRR"
         },
     },
 
@@ -44,7 +44,7 @@ const storyStages = {
         text: "As you near the end of your journey, you feel tense knowing any wrong decision could be your last.",
         bridgeChoice: ["Go left", "Go right"],
         bridgeConsequence: {
-            "Go left": "sadEnding",
+            "Go left": "LOSERRRR",
             "Go right": "Correct5"
         },
     },
@@ -54,19 +54,19 @@ const storyStages = {
         text: "You are now at the end of your journey. Be genuinely honest... Did you beat the game without any fails?",
         bridgeChoice: ["Yes", "No, I died at least once"],
         bridgeConsequence: {
-            "Yes": "sadEnding",
-            "No, I died at least once": "happyEnding"
+            "Yes": "LOSERRRR",
+            "No, I died at least once": "WOOOOO"
         },
     },
 
-    happyEnding: 
+    WOOOOO: 
 	{
         text: "Congratulations! Honesty always wins out.",
         bridgeChoice: [],
         bridgeConsequence: {},
     },
 
-    sadEnding: 
+    LOSERRRR: 
 	{
         text: "Remember what you've learned, and continue another time.",
         bridgeChoice: [],
