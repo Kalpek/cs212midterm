@@ -3,38 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Bridge</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mad Lib</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
 </head>
-<style>
-	footer 
-	{
-	margin-top: auto;
-	text-align: right;
-	}
-</style>
 <body>
 
-	<header>
-        <h1>The Bridge</h1>
-	</header>
+    <h1>Mad Lib</h1>
 
-    <div id="bridge">
-        <p>This is the beginning of the bridge...</p>
-    </div>
+    <label for="adjective">Adjective:</label>
+    <input type="text" id="adjective" placeholder="e.g., funny"><br>
 
-    <div id="bridgeChoice">
-        <button id="choice1">Choice 1</button>
-        <button id="choice2">Choice 2</button>
-    </div>
+    <label for="noun">Noun:</label>
+    <input type="text" id="noun" placeholder="e.g., cat"><br>
 
-    <script src="script.js"></script>
+    <label for="verb">Verb:</label>
+    <input type="text" id="verb" placeholder="e.g., jump"><br>
+
+    <label for="pronoun">Pronoun:</label>
+    <input type="text" id="pronoun" placeholder="e.g., he/she"><br>
+
+    <label for="place">Place:</label>
+    <input type="text" id="place" placeholder="e.g., park"><br>
+
+    <button onclick="generateMadLib()">Generate Mad Lib</button>
+
+    <p id="madLibText"></p>
+
+    <script src="madlib.js"></script>
 
 </body>
-<footer>
-<p>This project by far has taken me the longest to complete. I began immediately after finishing Lab 6, and its been a good few hours of trial and error. The biggest challenge was definitely the different paths between in game.</p>
-<p>Creating and keeping track of the path without something freezing was more difficult than I thought it'd be for sure. I always felt like there was something I forgot, then when I felt like I had everything, something froze the page and I couldn't figure out why.</p>
-<p>I chose a bridge game because of some mario party nostalgia, but it also just wasn't anything too crazy that still lead to a different outcome. Honestly the worst part about these back to back projects is that they were due on the same day, and I just so happen to be very sick. </p>
-<p>But overall, it was enjoyable to finally get the end product I wanted.</p>
-</footer>
 </html>
