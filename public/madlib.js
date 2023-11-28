@@ -1,16 +1,16 @@
-function generateMadLib() {
-    // Get user input
-    var adjective = document.getElementById('adjective').value;
-    var noun = document.getElementById('noun').value;
-    var verb = document.getElementById('verb').value;
-    var pronoun = document.getElementById('pronoun').value;
-    var place = document.getElementById('place').value;
+function generateMadLib() 
+{
+	var adjective, noun, verb, pronoun, place, madLib;
+	
+    adjective = document.getElementById('adjectiveID').value;
+    noun = document.getElementById('nounID').value;
+    verb = document.getElementById('verbID').value;
+    pronoun = document.getElementById('pronounID').value;
+    place = document.getElementById('placeID').value;
 
-    // Create the mad lib text
-    var madLibText = `Once upon a time, there was a(n) ${adjective} ${noun}.`;
-    madLibText += ` This ${noun} loved to ${verb} while ${pronoun} was at ${place}.`;
-    madLibText += ` It was a truly ${adjective} experience.`;
+    madLib = `In a ${adjective} world, a ${noun} existed peacefully at ${place}.`;
+    madLib += ` ${pronoun} ${verb} the challenges of life while also appreciating the good parts.`;
+    madLib += ` Life really is a rollercoaster, but once ${pronoun} graduates, ${pronoun} will have the opportunity to live a life ${pronoun} wants to live.`;
 
-    // Display the mad lib text to the user
-    document.getElementById('madLibText').innerText = madLibText;
+    document.getElementById('madLibText').innerText = madLib;
 }
