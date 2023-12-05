@@ -15,7 +15,7 @@ function validate()
     var isThisReallyAnEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!isThisReallyAnEmail.test(email))
     {
-        alert("Invalid Email");
+        alert("Please check to make sure your Email was input correctly");
         return;
     }
 
@@ -25,6 +25,6 @@ function validate()
         return;
     }
 
-    alert("Form Submitted Successfully!");
-    document.getElementById('myForm').reset();
+    alert("Good Job! Everything you input was valid! :)");
+    document.getElementById('myInputValidationThingy').reset();
 }
