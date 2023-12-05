@@ -3,15 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Validation</title>
-    <style>
-        body {
-            font-family: "Times New Roman", Times, serif;
-            font-size: 16px;
-            line-height: 2.0;
-            margin-right: 8cm;
-            margin-left: 8cm;
-    </style>
+    <title>Lab 8: Input Validation - Thomas Peaslee</title>
 </head>
 <body>
     <h1>Form Validation</h1>
@@ -33,19 +25,6 @@
 
         <button type="button" onclick="validateForm()">Submit</button>
     </form>
-
-    <section id="researchPaper">
-        <h2>Research Paper: Understanding XSS and SQLi</h2>
-        <p>As the internet continues to become a more integral part of society, it’s important to understand how to effectively be safe on the internet. Out of the many pros and cons the internet has, there’s no doubt that one of the most intriguing concepts that has prevailed, is that of anonymity. Users can, in a very short amount of time, be almost entirely anonymous on the internet and untraceable to their real self outside of the internet. This is usually done through virtual machines, which simulate real computers in order to run an optimized secure, anonymous setup; these are usually ran with virtual private networks (VPN’s) as well, in order to further obfuscate what information can actually be drawn back to the client that the user is on. These free tools that anyone can use online very quickly, efficiently, and easily, have real world use for many users. However, they can also be used to attack websites routinely, while not leaving much of a trace for punishment or justice. It’s become very clear that cybersecurity developers cannot dissuade users from attempting to attack a website, so they have to take preventative measures in order to prevent websites from being attacked. This is the basis of cybersecurity, and this paper will define some of the basic forms of protection that make up the backbone of webpage security, including XSS and SQL injection attacks.</p>
-        <p>Structured Query Language (SQL) is one of the most prevalent forms of attacking a website, and by proxy one of the most dangerous (Abikoye et al., 2020). Cross-site scripting (XSS) is also one of the biggest threats as a form of attack (Abikoye et al., 2020). These methods can both be used to gain access to the root of databases for web applications, to cause damage to the back-end (Abikoye et al., 2020). Whether it’s stealing, destroying, or editing software, these are not just major threats to the webpage itself, but to the administrators and users alike, as their data can be put into the hands of bad actors (Abikoye et al., 2020).</p>
-        <p>XSS attacks come in many forms, however they generally involve exploiting the trust that the website has given a user (CyberUP, 2021). If a website has entrusted part of that website to be controlled by a user, they can then put a form of attack in that designated part of the website in order to damage other users; as if someone on Facebook or some other social media put a dangerous link in their bio that can steal a users information or download malware onto that user’s computer and steal even more information. </p>
-        <p>There are three general types of XSS attacks: Stored or Persistent XSS, Reflected XSS, and DOM Based XSS (CyberUP, 2021) Stores or Persistent XSS can abuse how values are input into a database on a website; if those input values are not thoroughly sanitized, one can input a script into the database, and the script will be executed as the user attempts to retrieve that malicious “value”, making the database vulnerable to this form of attack (CyberUP, 2021). Reflected XSS is when a malicious input is used out of a database, and more so an attack on the web application itself (CyberUP, 2021). The main example being if a user inputs a malicious input into a search bar, if the input is not HTML/java escaped then the browser will execute the malicious code whenever that input is executed (CyberUP, 2021). DOM Based XSS is when a website is in the process of retrieving data from the IP address or URL of the website. If the data is directly retrieved from the URL and displayed onto the page, the application is vulnerable due to how a user can execute a script on the website through the vulnerable URL (CyberUP, 2021).</p>
-        <p>One general method to prevent XSS attacks is by encoding HTML characters input by the user to ensure the webpage does not execute HTML tags and script tags if somehow pushed by the user (CyberUP, 2021). There are public libraries on the internet that do this process for you. One popular example is OWASP for encoding HTML tags; by using this in your application whenever you escape HTML characters, it can prevent many of these attacks (CyberUP, 2021).</p>
-        <br><br>
-        <p>Abikoye, O. C., Abubakar, A., Dokoro, A. H., Akande, O. N., & Kayode, A. A. (2020, August 18). A novel technique to prevent SQL injection and cross-site scripting attacks using Knuth-Morris-Pratt String Match Algorithm - EURASIP Journal on Information Security. SpringerOpen. https://jis-eurasipjournals.springeropen.com/articles/10.1186/s13635-020-00113-y </p>
-        <p>CyberUP. (2021, April 5). Preventing SQL injection and XSS attacks. Medium. https://lakshmi993.medium.com/preventing-sql-injection-and-xss-attacks-404b38d24137 </p>
-    </section>
-
     <script src="validation.js"></script>
 </body>
 </html>
