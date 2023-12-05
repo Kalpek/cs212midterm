@@ -1,31 +1,30 @@
-function validateForm() {
-    // Fetching input values
+function validate()
+{
     var firstName = document.getElementById('firstName').value;
     var lastName = document.getElementById('lastName').value;
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var confirmPassword = document.getElementById('confirmPassword').value;
 
-    // Checking for empty fields
-    if (firstName === "" || lastName === "" || email === "" || password === "" || confirmPassword === "") {
+    if (firstName === "" || lastName === "" || email === "" || password === "" || confirmPassword === "")
+    {
         alert("All fields must be filled out");
         return;
     }
 
-    // Validating email format
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert("Invalid email format");
+    var isThisReallyAnEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!isThisReallyAnEmail.test(email))
+    {
+        alert("Invalid Email");
         return;
     }
 
-    // Checking if passwords match
-    if (password !== confirmPassword) {
-        alert("Passwords do not match");
+    if (password !== confirmPassword)
+    {
+        alert("Please make sure your Passwords match");
         return;
     }
 
-    // If all validations pass, submit the form
-    alert("Form submitted successfully!");
+    alert("Form Submitted Successfully!");
     document.getElementById('myForm').reset();
 }
