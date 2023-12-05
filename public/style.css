@@ -36,3 +36,9 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+}
+
+.narrow-margin {
+    margin: 1cm;
+}
