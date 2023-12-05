@@ -8,7 +8,7 @@ function validate()
 
     if (firstNameInput === "" || lastNameInput === "" || emailAddressInput === "" || passwordInput === "" || confirmPasswordInput === "")
     {
-        alert("All fields must be filled out");
+        alert("Please make sure all boxes are filled with your information");
         return;
     }
 
@@ -26,5 +26,4 @@ function validate()
     }
 
     alert("Good Job! Everything you input was valid! :)");
-    document.getElementById('myInputValidationThingy').reset();
 }
