@@ -2,7 +2,7 @@ function validate()
 {
     var firstNameInput = document.getElementById('firstName').value;
     var lastNameInput = document.getElementById('lastName').value;
-    var emailAddressInput = document.getElementById('emailAddressInput').value;
+    var emailAddressInput = document.getElementById('email').value;
     var passwordInput = document.getElementById('password').value;
     var confirmPasswordInput = document.getElementById('confirmPassword').value;
 
