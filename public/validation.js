@@ -1,25 +1,25 @@
 function validate()
 {
-    var firstName = document.getElementById('firstName').value;
-    var lastName = document.getElementById('lastName').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    var confirmPassword = document.getElementById('confirmPassword').value;
+    var firstNameInput = document.getElementById('firstName').value;
+    var lastNameInput = document.getElementById('lastName').value;
+    var emailAddressInput = document.getElementById('emailAddressInput').value;
+    var passwordInput = document.getElementById('password').value;
+    var confirmPasswordInput = document.getElementById('confirmPassword').value;
 
-    if (firstName === "" || lastName === "" || email === "" || password === "" || confirmPassword === "")
+    if (firstNameInput === "" || lastNameInput === "" || emailAddressInput === "" || passwordInput === "" || confirmPasswordInput === "")
     {
         alert("All fields must be filled out");
         return;
     }
 
     var isThisReallyAnEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!isThisReallyAnEmail.test(email))
+    if (!isThisReallyAnEmail.test(emailAddressInput))
     {
         alert("Please check to make sure your Email was input correctly");
         return;
     }
 
-    if (password !== confirmPassword)
+    if (passwordInput !== confirmPasswordInput)
     {
         alert("Please make sure your Passwords match");
         return;
