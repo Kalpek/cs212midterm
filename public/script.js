@@ -58,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () =>
   {
     const blackSquares = document.querySelectorAll('.square.is-off');
     
-    if (blackSquares.length === gameGrid * gameGrid) {
+    if (blackSquares.length === gameGrid * gameGrid) 
+    {
       window.alert('You win!');
       resetIfTheyWon();
     }
