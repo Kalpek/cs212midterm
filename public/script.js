@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => 
   {
-  const boardSize = 5;
-  const board = document.getElementById('LOboard');
+  const gameGrid = 5;
+  const grid = document.getElementById('LOboard');
 
   function createTheGame() 
   {
-    for (let i = 0; i < boardSize * boardSize; i++) 
+    for (let i = 0; i < gameGrid * gameGrid; i++) 
     {
       const square = document.createElement('div');
       square.classList.add('square');
       square.addEventListener('click', () => flipSquare(square));
-      board.appendChild(square);
+      grid.appendChild(square);
     }
     randomizeForNextGame();
   }
@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () =>
   {
     square.classList.toggle('is-off');
     
-    const rowIndex = Math.floor(Array.from(square.parentNode.children).indexOf(square) / boardSize);
-    const colIndex = Array.from(square.parentNode.children).indexOf(square) % boardSize;
+    const rowIndex = Math.floor(Array.from(square.parentNode.children).indexOf(square) / gameGrid);
+    const colIndex = Array.from(square.parentNode.children).indexOf(square) % gameGrid;
 
     flipNearbySquaresAfterClick(rowIndex - 1, colIndex);
     flipNearbySquaresAfterClick(rowIndex + 1, colIndex);
@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', () =>
 
   function flipNearbySquaresAfterClick(row, col) 
   {
-    if (row >= 0 && row < boardSize && col >= 0 && col < boardSize) 
+    if (row >= 0 && row < gameGrid && col >= 0 && col < gameGrid) 
     {
-      const index = row * boardSize + col;
+      const index = row * gameGrid + col;
       const square = document.querySelectorAll('.square')[index];
       square.classList.toggle('is-off');
     }
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () =>
     const squares = document.querySelectorAll('.square');
 
     // Simulate clicks! thanks for the tip on the assingment page for this
-    for (let i = 0; i < boardSize * boardSize * 2; i++) 
+    for (let i = 0; i < gameGrid * gameGrid * 2; i++) 
     {
       const randomIndex = Math.floor(Math.random() * squares.length);
       flipSquare(squares[randomIndex]);
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () =>
   function checkWin() 
   {
     const blackSquares = document.querySelectorAll('.square.is-off');
-    if (blackSquares.length === boardSize * boardSize) {
+    if (blackSquares.length === gameGrid * gameGrid) {
       window.alert('You win!');
       resetIfTheyWon();
     }
