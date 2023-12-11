@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', () =>
   {
     square.classList.toggle('is-off');
     
-    const rowIndex = Math.floor(Array.from(square.parentNode.children).indexOf(square) / gameGrid);
-    const colIndex = Array.from(square.parentNode.children).indexOf(square) % gameGrid;
+    const currentRow = Math.floor(Array.from(square.parentNode.children).indexOf(square) / gameGrid);
+    const currentColumn = Array.from(square.parentNode.children).indexOf(square) % gameGrid;
 
-    flipNearbySquaresAfterClick(rowIndex - 1, colIndex);
-    flipNearbySquaresAfterClick(rowIndex + 1, colIndex);
-    flipNearbySquaresAfterClick(rowIndex, colIndex - 1);
-    flipNearbySquaresAfterClick(rowIndex, colIndex + 1);
+    flipNearbySquaresAfterClick(currentRow - 1, currentColumn);
+    flipNearbySquaresAfterClick(currentRow + 1, currentColumn);
+    flipNearbySquaresAfterClick(currentRow, currentColumn - 1);
+    flipNearbySquaresAfterClick(currentRow, currentColumn + 1);
 
     checkWin();
   }
@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () =>
     // Simulate clicks! thanks for the tip on the assingment page for this
     for (let i = 0; i < gameGrid * gameGrid * 2; i++) 
     {
-      const randomIndex = Math.floor(Math.random() * squares.length);
-      flipSquare(squares[randomIndex]);
+      const randomSquare = Math.floor(Math.random() * squares.length);
+      flipSquare(squares[randomSquare]);
     }
   }
 
