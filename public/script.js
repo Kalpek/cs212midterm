@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () =>
     for (let i = 0; i < gameGrid * gameGrid; i++) 
     {
       const square = document.createElement('div');
+      
       square.classList.add('square');
       square.addEventListener('click', () => flipSquare(square));
       grid.appendChild(square);
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () =>
     {
       const index = row * gameGrid + col;
       const square = document.querySelectorAll('.square')[index];
+      
       square.classList.toggle('is-off');
     }
   }
@@ -43,11 +45,11 @@ document.addEventListener('DOMContentLoaded', () =>
   function randomizeForNextGame() 
   {
     const squares = document.querySelectorAll('.square');
-
-    // Simulate clicks! thanks for the tip on the assingment page for this
+    
     for (let i = 0; i < gameGrid * gameGrid * 2; i++) 
     {
       const randomSquare = Math.floor(Math.random() * squares.length);
+      
       flipSquare(squares[randomSquare]);
     }
   }
@@ -55,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () =>
   function checkWin() 
   {
     const blackSquares = document.querySelectorAll('.square.is-off');
+    
     if (blackSquares.length === gameGrid * gameGrid) {
       window.alert('You win!');
       resetIfTheyWon();
@@ -64,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () =>
   function resetIfTheyWon() 
   {
     const squares = document.querySelectorAll('.square');
+    
     squares.forEach(square => square.classList.remove('is-off'));
     randomizeForNextGame();
   }
