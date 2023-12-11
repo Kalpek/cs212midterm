@@ -33,7 +33,10 @@
 </body>
 
 <addendum>
-  <p>hi</p>
+  <b>Addendum</b>
+  <p>The main problem with this project is that it was almost entirely Javascript. I will say for this final project, the tips from the assignment page were really helpful to me. I made multiple functions: one to create the game, one to flip squares after click, one to flip nearby squares, one that randomizes the entire grid for the next game (or if the page is opened/reloaded), a function to check if someone has won, and a function to reset the grid if they did win.</p>
+  <p>The function that creates the game simply fills the grid defined in the index.html file, with squares also defined in index. the flipsquare function is the most important function for this project, and simply flips a certain square based on it's index in the grid. flipnearbysquaresafterclick uses flipsquares to flip the squares that are effected when the user clicks, onto the squares that are up, down, left, right and including the clicked square.</p>
+  <p>randomizefornextgame also uses the flipsquare function to simulate clicks. Again the tips on the assignment page really helped me! I did exactly what was said and flipped a random number of squares before the game is played. checkWin is used to detect whether every square in the grid is off (black). resetiftheywon is used after the textbox from checkWin is removed to just rerun randomizefornextgame.</p>
 </addendum>
   
 </html>
