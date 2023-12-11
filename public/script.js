@@ -15,7 +15,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function toggleSquare(square) {
     square.classList.toggle('is-off');
+    
+    // Get the row and column index of the clicked square
+    const rowIndex = Math.floor(Array.from(square.parentNode.children).indexOf(square) / boardSize);
+    const colIndex = Array.from(square.parentNode.children).indexOf(square) % boardSize;
+
+    // Toggle adjacent squares
+    toggleAdjacentSquare(rowIndex - 1, colIndex); // Top
+    toggleAdjacentSquare(rowIndex + 1, colIndex); // Bottom
+    toggleAdjacentSquare(rowIndex, colIndex - 1); // Left
+    toggleAdjacentSquare(rowIndex, colIndex + 1); // Right
+
     checkWin();
+  }
+
+  function toggleAdjacentSquare(row, col) {
+    if (row >= 0 && row < boardSize && col >= 0 && col < boardSize) {
+      const index = row * boardSize + col;
+      const square = document.querySelectorAll('.square')[index];
+      square.classList.toggle('is-off');
+    }
   }
 
   function randomizeBoard() {
