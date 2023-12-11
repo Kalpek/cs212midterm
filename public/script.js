@@ -3,34 +3,34 @@ document.addEventListener('DOMContentLoaded', () =>
   const boardSize = 5;
   const board = document.getElementById('LOboard');
 
-  function initializeBoard() 
+  function createTheGame() 
   {
     for (let i = 0; i < boardSize * boardSize; i++) 
     {
       const square = document.createElement('div');
       square.classList.add('square');
-      square.addEventListener('click', () => toggleSquare(square));
+      square.addEventListener('click', () => flipSquare(square));
       board.appendChild(square);
     }
-    randomizeBoard();
+    randomizeForNextGame();
   }
 
-  function toggleSquare(square)
+  function flipSquare(square)
   {
     square.classList.toggle('is-off');
     
     const rowIndex = Math.floor(Array.from(square.parentNode.children).indexOf(square) / boardSize);
     const colIndex = Array.from(square.parentNode.children).indexOf(square) % boardSize;
 
-    toggleAdjacentSquare(rowIndex - 1, colIndex);
-    toggleAdjacentSquare(rowIndex + 1, colIndex);
-    toggleAdjacentSquare(rowIndex, colIndex - 1);
-    toggleAdjacentSquare(rowIndex, colIndex + 1);
+    flipNearbySquaresAfterClick(rowIndex - 1, colIndex);
+    flipNearbySquaresAfterClick(rowIndex + 1, colIndex);
+    flipNearbySquaresAfterClick(rowIndex, colIndex - 1);
+    flipNearbySquaresAfterClick(rowIndex, colIndex + 1);
 
     checkWin();
   }
 
-  function toggleAdjacentSquare(row, col) 
+  function flipNearbySquaresAfterClick(row, col) 
   {
     if (row >= 0 && row < boardSize && col >= 0 && col < boardSize) 
     {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () =>
     }
   }
 
-  function randomizeBoard() 
+  function randomizeForNextGame() 
   {
     const squares = document.querySelectorAll('.square');
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () =>
     for (let i = 0; i < boardSize * boardSize * 2; i++) 
     {
       const randomIndex = Math.floor(Math.random() * squares.length);
-      toggleSquare(squares[randomIndex]);
+      flipSquare(squares[randomIndex]);
     }
   }
 
@@ -57,16 +57,16 @@ document.addEventListener('DOMContentLoaded', () =>
     const blackSquares = document.querySelectorAll('.square.is-off');
     if (blackSquares.length === boardSize * boardSize) {
       window.alert('You win!');
-      resetBoard();
+      resetIfTheyWon();
     }
   }
 
-  function resetBoard() 
+  function resetIfTheyWon() 
   {
     const squares = document.querySelectorAll('.square');
     squares.forEach(square => square.classList.remove('is-off'));
-    randomizeBoard();
+    randomizeForNextGame();
   }
 
-  initializeBoard();
+  createTheGame();
 });
