@@ -5,28 +5,27 @@ document.addEventListener('DOMContentLoaded', () =>
 
   function initializeBoard() 
   {
-    for (let i = 0; i < boardSize * boardSize; i++) {
+    for (let i = 0; i < boardSize * boardSize; i++) 
+    {
       const square = document.createElement('div');
       square.classList.add('square');
       square.addEventListener('click', () => toggleSquare(square));
       board.appendChild(square);
     }
-
     randomizeBoard();
   }
 
-  function toggleSquare(square) 
+  function toggleSquare(square)
   {
     square.classList.toggle('is-off');
     
-    // Get the row and column index of the clicked square
     const rowIndex = Math.floor(Array.from(square.parentNode.children).indexOf(square) / boardSize);
     const colIndex = Array.from(square.parentNode.children).indexOf(square) % boardSize;
 
-    toggleAdjacentSquare(rowIndex - 1, colIndex); // Top
-    toggleAdjacentSquare(rowIndex + 1, colIndex); // Bottom
-    toggleAdjacentSquare(rowIndex, colIndex - 1); // Left
-    toggleAdjacentSquare(rowIndex, colIndex + 1); // Right
+    toggleAdjacentSquare(rowIndex - 1, colIndex);
+    toggleAdjacentSquare(rowIndex + 1, colIndex);
+    toggleAdjacentSquare(rowIndex, colIndex - 1);
+    toggleAdjacentSquare(rowIndex, colIndex + 1);
 
     checkWin();
   }
